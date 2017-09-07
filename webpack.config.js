@@ -11,10 +11,11 @@ const library = {
 }
 
 const DEV = process.env.NODE_ENV === 'development'
+const WATCH = process.env.NODE_ENV === 'watch'
 
 let webpackConfig = {
   entry: path.resolve(__dirname, config.main),
-  watch: DEV,
+  watch: WATCH,
   output: {
     library: library.name,
     libraryTarget: library.target,
@@ -45,7 +46,7 @@ let webpackConfig = {
   plugins: []
 }
 
-if (!DEV) {
+if (!DEV && !WATCH) {
   webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
     sourceMap: true,
     compress: { warnings: false }
