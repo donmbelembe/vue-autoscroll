@@ -1,26 +1,25 @@
-const path = require('path');
-const config = require('./package.json');
+const path = require('path')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const config = require('./package.json')
 
-const webpack = require('webpack');
-require('dotenv').config();
+const webpack = require('webpack')
 
-const PROD = process.env.NODE_ENV === 'production';
+// Config object
+const library = {
+  name: 'VueAutoscroll',
+  target: 'umd'
+}
 
-// let plugins = [];
+const DEV = process.env.NODE_ENV === 'development';
 
-// PROD ? [
-//   plugins.push(new webpack.optimize.UglifyJsPlugin({
-//     compress: { warnings: false }
-//   }))
-// ] : '';
-
-module.exports = {
+let webpackConfig = {
   entry: path.resolve(__dirname, config.main),
+  watch: DEV,
   output: {
-    library: process.env.NAME,
-    libraryTarget: process.env.TARGET,
+    library: library.name,
+    libraryTarget: library.target,
     path: path.resolve(__dirname, "dist"),
-    filename: (PROD) ? 'autoscroll.min.js' : 'autoscroll.js'
+    filename: (DEV) ? 'autoscroll.js' : 'autoscroll.min.js'
   },
   // devtool: 'source-map',
   module: {
@@ -31,6 +30,12 @@ module.exports = {
         use: ['babel-loader']
       }
     ],
-  }
-  // plugins: plugins
-};
+  },
+  plugins: []
+}
+
+if(!DEV) {
+  webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({compress: { warnings: false }}))
+}
+
+module.exports = webpackConfig
