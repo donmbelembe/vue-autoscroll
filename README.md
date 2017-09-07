@@ -12,7 +12,7 @@
 npm install --save vue-autoscroll
 ```
 
-1. Globally
+1. Use globally
 ```js
 import Vue from 'vue'
 import Autoscroll from 'vue-autoscroll'
@@ -21,7 +21,7 @@ import Autoscroll from 'vue-autoscroll'
 Vue.use({{ Autoscroll }})
 ```
 
-2. Locally on a component
+2. Use locally on a component
 ```js
 
 import { autoscroll } from 'vue-autoscroll'
@@ -33,6 +33,39 @@ export default {
   }
 }
 ```
+
+### Download manually
+
+1. Get the latest release [here](https://github.com/donmbelembe/vue-autoscroll/releases), uncompress the file then include the */vue-autoscroll/dist/autoscroll.min.js* on your project
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>vue Autoscroll</title>
+</head>
+<body>
+  <div id="app">
+    <div v-autoscroll="middle" style="width:250px; height:250px;">
+      <div style="width:500px; height:500px; font-size:25px;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio cupiditate voluptas amet recusandae nulla quas!
+      </div>
+    </div>
+  </div>
+  <script src="./path/to/vue/dist/vue.js"></script>
+  <script src="/path/to/vue-autoscroll/dist/autoscroll.js"></script>
+  <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue.js!'
+        }
+      })
+  </script>
+</body>
+</html>
+```
+
 
 ## Usage
 
