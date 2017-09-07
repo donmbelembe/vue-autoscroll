@@ -6,27 +6,31 @@ require('dotenv').config();
 
 const PROD = process.env.NODE_ENV === 'production';
 
-let plugins = [];
+// let plugins = [];
 
-PROD ? [
-  plugins.push(new webpack.optimize.UglifyJsPlugin({
-    compress: { warnings: false }
-  }))
-] : '';
+// PROD ? [
+//   plugins.push(new webpack.optimize.UglifyJsPlugin({
+//     compress: { warnings: false }
+//   }))
+// ] : '';
 
 module.exports = {
   entry: path.resolve(__dirname, config.main),
-  devtool: 'source-map',
   output: {
     library: process.env.NAME,
     libraryTarget: process.env.TARGET,
-    path: __dirname,
-    filename: (PROD) ? 'build/autoscroll.min.js' : 'build/autoscroll.js'
+    path: path.resolve(__dirname, "dist"),
+    filename: (PROD) ? 'autoscroll.min.js' : 'autoscroll.js'
   },
+  // devtool: 'source-map',
   module: {
-    loaders: [
-      {test: /\.es6?$/, exclude: /node_modules/, loader: 'babel-loader'}
-    ]
-  },
-  plugins: plugins
+    rules: [
+      {
+        test: /\.js?$/,
+        exclude: /(node_modules|bower_components)/,
+        use: ['babel-loader']
+      }
+    ],
+  }
+  // plugins: plugins
 };
