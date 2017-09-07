@@ -1,14 +1,37 @@
-# {{ vue-autoscroll }}
-A vue directive to scroll anywhere on a container (horizontally or vertically)
+# vue-autoscroll (UNDER DEVELOPMENT)
 
 [![npm](https://img.shields.io/npm/v/{{ name }}.svg)](https://www.npmjs.com/package/{{ name }}) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
-> {{ description }}
+> A vue directive to scroll anywhere on a container (horizontally or vertically)
 
 ## Installation
 
+### Via npm
+
 ```bash
-npm install --save {{ name }}
+npm install --save vue-autoscroll
+```
+
+1. Globally
+```js
+import Vue from 'vue'
+import Autoscroll from 'vue-autoscroll'
+
+// this will install v-autoscroll directive and can be used on any component or tag
+Vue.use({{ Autoscroll }})
+```
+
+2. Locally on a component
+```js
+
+import { autoscroll } from 'vue-autoscroll'
+
+export default {
+  directives: {
+    // this will install v-autoscroll directive and can be used only on the current component or tag
+    autoscroll
+  }
+}
 ```
 
 ## Usage
@@ -57,22 +80,6 @@ Bundle the js and css of to the `dist` folder:
 
 ```bash
 npm run build
-```
-
-
-## Publishing
-
-The `prepublish` hook will ensure dist files are created before publishing. This
-way you don't need to commit them in your repository.
-
-```bash
-# Bump the version first
-# It'll also commit it and create a tag
-npm version
-# Push the bumped package and tags
-git push --follow-tags
-# Ship it 🚀
-npm publish
 ```
 
 ## License
