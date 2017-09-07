@@ -2,7 +2,7 @@
   "name": "vue-autoscroll",
   "version": "1.0.0",
   "description": "A vue js directive to scroll anywhere on a container",
-  "main": "autoscroll.js",
+  "main": "src/autoscroll.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
