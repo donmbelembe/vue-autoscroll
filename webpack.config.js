@@ -1,5 +1,5 @@
 const path = require('path')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const config = require('./package.json')
 
 const webpack = require('webpack')
@@ -10,7 +10,7 @@ const library = {
   target: 'umd'
 }
 
-const DEV = process.env.NODE_ENV === 'development';
+const DEV = process.env.NODE_ENV === 'development'
 
 let webpackConfig = {
   entry: path.resolve(__dirname, config.main),
@@ -18,7 +18,7 @@ let webpackConfig = {
   output: {
     library: library.name,
     libraryTarget: library.target,
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, 'dist'),
     filename: (DEV) ? 'autoscroll.js' : 'autoscroll.min.js',
     publicPath: '/dist/'
   },
@@ -40,12 +40,12 @@ let webpackConfig = {
         exclude: /(node_modules|bower_components)/,
         use: ['babel-loader']
       }
-    ],
+    ]
   },
   plugins: []
 }
 
-if(!DEV) {
+if (!DEV) {
   webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
     sourceMap: true,
     compress: { warnings: false }
