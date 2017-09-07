@@ -21,7 +21,7 @@ let webpackConfig = {
     path: path.resolve(__dirname, "dist"),
     filename: (DEV) ? 'autoscroll.js' : 'autoscroll.min.js'
   },
-  // devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
   module: {
     rules: [
       {
