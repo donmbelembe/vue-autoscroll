@@ -19,9 +19,10 @@ let webpackConfig = {
     library: library.name,
     libraryTarget: library.target,
     path: path.resolve(__dirname, "dist"),
-    filename: (DEV) ? 'autoscroll.js' : 'autoscroll.min.js'
+    filename: (DEV) ? 'autoscroll.js' : 'autoscroll.min.js',
+    publicPath: '/dist/'
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: DEV ? 'cheap-module-eval-source-map' : 'source-map',
   module: {
     rules: [
       {
@@ -35,7 +36,10 @@ let webpackConfig = {
 }
 
 if(!DEV) {
-  webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({compress: { warnings: false }}))
+  webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    sourceMap: true,
+    compress: { warnings: false }
+  }))
 }
 
 module.exports = webpackConfig
