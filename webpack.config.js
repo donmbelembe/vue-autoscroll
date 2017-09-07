@@ -23,6 +23,10 @@ let webpackConfig = {
     publicPath: '/dist/'
   },
   devtool: DEV ? 'cheap-module-eval-source-map' : 'source-map',
+  devServer: {
+    overlay: true,
+    contentBase: path.resolve(__dirname)
+  },
   module: {
     rules: [
       {
