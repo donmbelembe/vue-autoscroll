@@ -1,4 +1,4 @@
-import autoscroll from './directives/autoscroll.js';
+import autoscroll from './directives/autoscroll';
 
 const vueAutoscroll = {
   install(Vue, options) {
