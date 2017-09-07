@@ -53,6 +53,8 @@ export default {
     </div>
   </div>
   <script src="./path/to/vue/dist/vue.js"></script>
+
+  <!-- This will install v-autoscroll directive by degault-->
   <script src="/path/to/vue-autoscroll/dist/autoscroll.js"></script>
   <script>
       new Vue({
