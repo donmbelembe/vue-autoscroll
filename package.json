@@ -1,6 +1,6 @@
 {
   "name": "vue-autoscroll",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A vue js directive to scroll anywhere on a container",
   "main": "dist/autoscroll.js",
   "scripts": {
