@@ -1,0 +1,22 @@
+{
+  "name": "vue-autoscroll",
+  "version": "1.0.0",
+  "description": "A vue js directive to scroll anywhere on a container",
+  "main": "autoscroll.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donmbelembe/vue-autoscroll.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "Don mbelembe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/donmbelembe/vue-autoscroll/issues"
+  },
+  "homepage": "https://github.com/donmbelembe/vue-autoscroll#readme"
+}
