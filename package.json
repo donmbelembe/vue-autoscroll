@@ -4,6 +4,7 @@
   "description": "A vue js directive to scroll anywhere on a container",
   "main": "src/autoscroll.js",
   "scripts": {
+    "dev": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
