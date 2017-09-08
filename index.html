@@ -58,6 +58,12 @@
 
           <div class="divide"></div>
 
+          <div>
+            <a href="https://github.com/donmbelembe/vue-autoscroll"><h4><i class="fa fa-github"></i> Github</h4></a>
+            <a href="https://www.npmjs.com/package/vue-autoscroll"><h4><strong>npm install --save vue-autoscroll</strong></h4></a>
+            <a href="https://unpkg.com/vue-autoscroll"><h4><strong>cdn: https://unpkg.com/vue-autoscroll</strong></h4></a>
+          </div>
+
         </div>
         <div class="pure-u-1 pure-u-md-3-4 ground">
           <div class="container">
@@ -86,6 +92,19 @@
   </div>
   <script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/vue-autoscroll"></script>
-  <script src="/assets/script.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        autoscroll: 'center',
+        message: 'Hello Vue.js!',
+      },
+      methods: {
+        autoscrollTest (value) {
+          this.autoscroll = value
+        }
+      }
+    })
+  </script>
 </body>
 </html>
