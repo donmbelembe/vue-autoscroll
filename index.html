@@ -5,12 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>vue Autoscroll</title>
+  <style>
+    .commands {
+      width: 100%;
+      display: flex;
+      margin: 20px 0 20px 0;
+      justify-content: center;
+    }
+
+    .parent {
+      margin: 0 auto;
+      width: 500px;
+      height: 500px;
+      border: 10px solid red;
+      overflow: scroll;
+    }
+    .child {
+      width: 700px;
+      height: 700px;
+      background: rebeccapurple;
+      border: 10px solid #000;
+      border-radius: 200px;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
-    <p>{{ message }}</p>
+    <h1>Use these buttons to test v-autoscroll</h1>
+    <div class="commands">
+      <button @click="autoscrollTest('top')">top</button> <br> 
+      <button @click="autoscrollTest('right')">right</button> <br> 
+      <button @click="autoscrollTest('bottom')">bottom</button> <br> 
+      <button @click="autoscrollTest('left')">left</button> <br> 
+      <button @click="autoscrollTest('top left')">top left</button> <br> 
+      <button @click="autoscrollTest('top right')">top right</button> <br> 
+      <button @click="autoscrollTest('bottom left')">bottom left</button> <br> 
+      <button @click="autoscrollTest('bottom right')">bottom right</button> <br> 
+      <button @click="autoscrollTest('middle')">middle</button>
+    </div>
 
-    <div v-demo></div>
+    <div class="container">
+      <div class="parent">
+        <div class="child">
+  
+        </div>
+      </div>
+    </div>
+    
   </div>
   <script src="./node_modules/vue/dist/vue.js"></script>
   <script src="/dist/vue-autoscroll.js"></script>
@@ -18,7 +59,14 @@
       new Vue({
         el: '#app',
         data: {
+          autoscroll: 'bottom',
           message: 'Hello Vue.js!'
+        },
+        methods: {
+          autoscrollTest (value) {
+            console.log(value)
+            this.autoscroll = value
+          }
         }
       })
   </script>
