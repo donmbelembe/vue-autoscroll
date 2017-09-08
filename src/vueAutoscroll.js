@@ -1,17 +1,15 @@
 // import autoscroll from './directives/autoscroll';
 
 export const autoscroll = {
-  bind: function (el, binding, vnode) {
-    var s = JSON.stringify
-    el.innerHTML =
-      'name: ' + s(binding.name) + '<br>' +
-      'value: ' + s(binding.value) + '<br>' +
-      'expression: ' + s(binding.expression) + '<br>' +
-      'argument: ' + s(binding.arg) + '<br>' +
-      'modifiers: ' + s(binding.modifiers) + '<br>' +
-      'vnode keys: ' + Object.keys(vnode).join(', ')
-
-    console.log('v-autoscrol is not ready yet')
+  inserted: function (el, binding, vnode) {
+    // Send warning message no argument, value or expressions is passed
+    if (binding.value === undefined && Object.keys(binding.modifiers).length === 0 && binding.arg === undefined) {
+      console.warn('You should give to the v-' + binding.name + ' directive the scroll informations.\n READ THE DOCUMENTATION.')
+      return 0
+    }
+  },
+  update: function (el, binding, vnode) {
+    //
   }
 }
 
