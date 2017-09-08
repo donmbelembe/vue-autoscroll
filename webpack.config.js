@@ -22,7 +22,7 @@ let webpackConfig = {
     library: library.name,
     libraryTarget: library.target,
     path: path.resolve(__dirname, 'dist'),
-    filename: (PROD) ? 'autoscroll.min.js' : 'autoscroll.js',
+    filename: (PROD) ? 'vue-autoscroll.min.js' : 'vue-autoscroll.js',
     publicPath: '/dist/'
   },
   externals: {
