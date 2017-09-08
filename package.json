@@ -7,7 +7,7 @@
     "dev": "cross-env NODE_ENV=development webpack",
     "prod": "cross-env NODE_ENV=production webpack",
     "build": "npm run dev && npm run prod",
-    "watch": "npm run dev && cross-env NODE_ENV=watch webpack-dev-server --open --hot",
+    "watch": "cross-env NODE_ENV=watch webpack-dev-server --open --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
