@@ -7,6 +7,13 @@ export const autoscroll = {
       console.warn('You should give to the v-' + binding.name + ' directive the scroll informations.\n READ THE DOCUMENTATION.')
       return 0
     }
+
+    // Suported value
+    var autoPositions = ['top', 'right', 'bottom', 'left', 'top left', 'top right', 'bottom left', 'bottom right', 'middle']
+
+    if (autoPositions.includes(binding.value)) {
+      //
+    }
   },
   update: function (el, binding, vnode) {
     //
