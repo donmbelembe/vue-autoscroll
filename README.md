@@ -6,8 +6,6 @@
 
 ## Example
 
-## Installation
-
 > This will scroll horizotally and vertically to middle
 
 ```html
@@ -15,6 +13,8 @@
   <div id="child"></div>
 </div>
 ```
+
+## Installatio
 
 ### Via npm
 
