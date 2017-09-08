@@ -12,6 +12,17 @@
 npm install --save vue-autoscroll
 ```
 
+### Download manually
+
+1. Get the latest release [here](https://github.com/donmbelembe/vue-autoscroll/releases), uncompress the file then include the `/vue-autoscroll/dist/autoscroll.min.js` on your project
+
+2. Use the [CDN](https://unpkg.com/vue-autoscroll): https://unpkg.com/vue-autoscroll
+
+
+## Usage
+
+### Bundler (Webpack, Rollup)
+
 1. Use globally
 ```js
 import Vue from 'vue'
@@ -34,65 +45,15 @@ export default {
 }
 ```
 
-### Download manually
-
-1. Get the latest release [here](https://github.com/donmbelembe/vue-autoscroll/releases), uncompress the file then include the `/vue-autoscroll/dist/autoscroll.min.js` on your project
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>vue Autoscroll</title>
-</head>
-<body>
-  <div id="app">
-    <div v-autoscroll="middle" style="width:250px; height:250px;">
-      <div style="width:500px; height:500px; font-size:25px;">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio cupiditate voluptas amet recusandae nulla quas!
-      </div>
-    </div>
-  </div>
-  <script src="./path/to/vue/dist/vue.js"></script>
-
-  <!-- This will install v-autoscroll directive by degault-->
-  <script src="/path/to/vue-autoscroll/dist/autoscroll.js"></script>
-  <script>
-      new Vue({
-        el: '#app',
-        data: {
-          message: 'Hello Vue.js!'
-        }
-      })
-  </script>
-</body>
-</html>
-```
-
-
-## Usage
-
-### Bundler (Webpack, Rollup)
-
-```js
-import Vue from 'vue'
-import {{ library }} from '{{ name }}'
-// You need a specific loader for CSS files like https://github.com/webpack/css-loader
-import '{{ name }}/dist/{{ name }}.css'
-
-Vue.use({{ library }})
-```
-
 ### Browser
 
 ```html
 <!-- Include after Vue -->
 <!-- Local files -->
-<link rel="stylesheet" href="{{ name }}/dist/{{ name }}.css"></link>
-<script src="{{ name }}/dist/{{ name }}.js"></script>
+<script src="vue-autoscroll/dist/vue-autoscroll.js"></script>
 
 <!-- From CDN -->
-<link rel="stylesheet" href="https://unpkg.com/{{ name }}/dist/{{ name }}.css"></link>
-<script src="https://unpkg.com/{{ name }}"></script>
+<script src="https://unpkg.com/vue-autoscroll"></script>
 ```
 
 ## Development
@@ -110,7 +71,7 @@ npm run dev
 This will compile the minified js on the dist folder
 
 ```bash
-npm run pro
+npm run prod
 ```
 
 ### Compile dev and watch for change
