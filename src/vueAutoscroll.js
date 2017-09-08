@@ -65,6 +65,10 @@ export const autoscroll = {
       return 0
     }
 
+    if (binding.arg === 'noscroll') {
+      el.style.overflow = 'hidden'
+    }
+
     autoscroll.scroll(el, binding.value)
   },
   componentUpdated: function (el, binding, vnode, oldVnode) {
