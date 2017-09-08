@@ -4,7 +4,17 @@
 
 > A vue directive to scroll anywhere on a container (horizontally or vertically)
 
+## Example
+
 ## Installation
+
+> This will scroll horizotally and vertically to middle
+
+```html
+<div id="parent" v-autoscroll="middle">
+  <div id="child"></div>
+</div>
+```
 
 ### Via npm
 
@@ -56,6 +66,9 @@ export default {
 <script src="https://unpkg.com/vue-autoscroll"></script>
 ```
 
+## API Reference
+
+
 ## Development
 
 ### Compile dev
@@ -86,6 +99,10 @@ Release both normal and minified js of to the `dist` folder:
 ```bash
 npm run build
 ```
+
+## Contributors
++
+
 
 ## License
 
