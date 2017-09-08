@@ -66,13 +66,16 @@ export default {
 
 ## API Reference
 
-### v-autoscroll:arg="value"
+```
+v-autoscroll:arg="value"
+```
 
-If *arg* it set to `noscroll`, it will apply *overflow:hidden* on the element. we use it to hide scrollbars (*it's optional*)
+1. `v-autoscroll` is the directive.
+2. You may pass `noscroll` as an `argument` (this will set *overflow: hidden* to the element and will hide scroll bars)
+> #### Usage : v-autoscroll:noscroll="top left"
+3. Accepted values are : '`top`', '`right`', '`bottom`', '`left`', '`center`', '`top left`', '`top right`', '`bottom left`', '`bottom right`', '`top center`', '`left center`', '`right center`', '`bottom center`'
 
-*arg* can be : 'top', 'right', 'bottom', 'left', 'center', 'top left', 'top right', 'bottom left', 'bottom right', 'top center', 'left center', 'right center', 'bottom center'
-
-> You can view the behaviours on the [playground](https://donmbelembe.github.io/vue-autoscroll/)
+> You can see all the behaviours on the [playground](https://donmbelembe.github.io/vue-autoscroll/)
 
 
 ## Development
