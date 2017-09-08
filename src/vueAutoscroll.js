@@ -8,11 +8,15 @@ export const autoscroll = {
       'right',
       'bottom',
       'left',
+      'center',
       'top left',
       'top right',
       'bottom left',
       'bottom right',
-      'middle'
+      'top center',
+      'left center',
+      'right center',
+      'bottom center'
     ]
 
     if (autoPositions.includes(value)) {
@@ -36,7 +40,7 @@ export const autoscroll = {
       } else if (value === 'bottom right') {
         el.scrollTop = el.scrollHeight - el.clientHeight
         el.scrollLeft = el.scrollWidth - el.clientWidth
-      } else if (value === 'middle') {
+      } else if (value === 'center') {
         el.scrollTop = (el.scrollHeight - el.clientHeight) / 2
         el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2
       }
