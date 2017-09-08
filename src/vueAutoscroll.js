@@ -10,12 +10,14 @@ export const autoscroll = {
       'argument: ' + s(binding.arg) + '<br>' +
       'modifiers: ' + s(binding.modifiers) + '<br>' +
       'vnode keys: ' + Object.keys(vnode).join(', ')
+
+    console.log('v-autoscrol is not ready yet')
   }
 }
 
 const VueAutoscroll = {
   install (Vue, options) {
-    Vue.directive('demo', autoscroll)
+    Vue.directive('autoscroll', autoscroll)
   }
 }
 
