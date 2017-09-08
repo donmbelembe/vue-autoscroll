@@ -1,6 +1,4 @@
-# vue-autoscroll (UNDER DEVELOPMENT)
-
-[![npm](https://img.shields.io/npm/v/{{ name }}.svg)](https://www.npmjs.com/package/{{ name }}) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+# vue-autoscroll
 
 > A vue directive to scroll anywhere on a container (horizontally or vertically)
 
@@ -9,7 +7,7 @@
 > This will scroll horizotally and vertically to middle
 
 ```html
-<div id="parent" v-autoscroll="middle">
+<div id="parent" v-autoscroll="center">
   <div id="child"></div>
 </div>
 ```
@@ -67,6 +65,14 @@ export default {
 ```
 
 ## API Reference
+
+### v-autoscroll:arg="value"
+
+If *arg* it set to `noscroll`, it will apply *overflow:hidden* on the element. we use it to hide scrollbars (*it's optional*)
+
+*arg* can be : 'top', 'right', 'bottom', 'left', 'center', 'top left', 'top right', 'bottom left', 'bottom right', 'top center', 'left center', 'right center', 'bottom center'
+
+> You can view the behaviours on the [playground]()
 
 
 ## Development
