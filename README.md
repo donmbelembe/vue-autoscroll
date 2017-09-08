@@ -72,7 +72,7 @@ If *arg* it set to `noscroll`, it will apply *overflow:hidden* on the element. w
 
 *arg* can be : 'top', 'right', 'bottom', 'left', 'center', 'top left', 'top right', 'bottom left', 'bottom right', 'top center', 'left center', 'right center', 'bottom center'
 
-> You can view the behaviours on the [playground]()
+> You can view the behaviours on the [playground](https://donmbelembe.github.io/vue-autoscroll/)
 
 
 ## Development
