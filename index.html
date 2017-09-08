@@ -26,6 +26,15 @@
       background: rebeccapurple;
       border: 10px solid #000;
       border-radius: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .grand-child {
+      background: green;
+      width: 250px;
+      height: 250px;
     }
   </style>
 </head>
@@ -47,7 +56,7 @@
     <div class="container">
       <div class="parent" v-autoscroll="autoscroll">
         <div class="child">
-  
+          <div class="grand-child"></div>
         </div>
       </div>
     </div>
