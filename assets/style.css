@@ -1,0 +1,73 @@
+body {
+  background: coral;
+}
+
+button {
+  margin: 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.5em!important;
+}
+
+.divide {
+  width: 200px;
+  height: 1px;
+  background: coral;
+  margin: 0 auto;
+}
+
+.mb {
+  margin-bottom: 10px;
+}
+
+.pure-g > div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.controls {
+  height: auto;
+  background: #000;
+  color: coral;
+  padding-left: 1em;
+}
+
+.ground {
+  height: auto;
+  padding: 1em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media screen and (min-width: 48em) {
+  .controls, .ground {
+    min-height: 100vh;
+  }
+}
+
+.parent {
+  width: 200px;
+  height: 200px;
+  border: 10px solid red;
+  overflow: hidden;
+}
+.child {
+  width: 300px;
+  height: 300px;
+  background: rebeccapurple;
+  border: 10px solid #000;
+  border-radius: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grand-child {
+  background: green;
+  width: 250px;
+  height: 250px;
+}
