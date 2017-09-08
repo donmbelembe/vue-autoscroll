@@ -2,7 +2,7 @@
   "name": "vue-autoscroll",
   "version": "1.0.3",
   "description": "A vue js directive to scroll anywhere on a container",
-  "main": "dist/autoscroll.js",
+  "main": "dist/vue-autoscroll.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack",
     "prod": "cross-env NODE_ENV=production webpack",
