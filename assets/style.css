@@ -2,6 +2,12 @@ body {
   background: coral;
 }
 
+a {
+  text-decoration: none;
+  color: initial;
+  color: #fff;
+}
+
 button {
   margin: 5px;
 }
