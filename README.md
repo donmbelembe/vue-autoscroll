@@ -36,7 +36,7 @@ export default {
 
 ### Download manually
 
-1. Get the latest release [here](https://github.com/donmbelembe/vue-autoscroll/releases), uncompress the file then include the */vue-autoscroll/dist/autoscroll.min.js* on your project
+1. Get the latest release [here](https://github.com/donmbelembe/vue-autoscroll/releases), uncompress the file then include the `/vue-autoscroll/dist/autoscroll.min.js` on your project
 
 ```html
 <!DOCTYPE html>
@@ -97,21 +97,30 @@ Vue.use({{ library }})
 
 ## Development
 
-### Launch visual tests
+### Compile dev
+
+This while compile non minified js on the dist folder
 
 ```bash
 npm run dev
 ```
 
-### Launch Karma with coverage
+### Compile prod
+
+This will compile the minified js on the dist folder
 
 ```bash
-npm run dev:coverage
+npm run pro
+```
+
+### Compile dev and watch for change
+```bash
+npm run watch
 ```
 
 ### Build
 
-Bundle the js and css of to the `dist` folder:
+Release both normal and minified js of to the `dist` folder:
 
 ```bash
 npm run build
