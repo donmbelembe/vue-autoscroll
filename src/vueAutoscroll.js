@@ -1,5 +1,3 @@
-// import autoscroll from './directives/autoscroll';
-
 export const autoscroll = {
   scroll: function (el, value) {
     // Suported value
