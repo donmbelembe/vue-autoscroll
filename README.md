@@ -116,3 +116,11 @@ npm run build
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+## TODO
+
++ v2
++ Object as parameter
++ Animate scrolling
++ Scroll to a targeted child element
++ Add functionality for ScrollBy(). (Experimental javascript function)
