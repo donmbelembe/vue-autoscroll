@@ -1,4 +1,4 @@
-# vue-autoscroll
+# vue-autoscroll [Playground](https://donmbelembe.github.io/vue-autoscroll/)
 
 > A vue directive to scroll anywhere on a container (horizontally or vertically)
 
@@ -119,8 +119,6 @@ npm run build
 
 ## TODO
 
-+ v2
-+ Object as parameter
 + Animate scrolling
 + Scroll to a targeted child element
 + Add functionality for ScrollBy(). (Experimental javascript function)

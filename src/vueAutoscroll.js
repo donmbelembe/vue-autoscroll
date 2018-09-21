@@ -41,7 +41,7 @@ export const autoscroll = {
       } else if (value === 'center') {
         el.scrollTop = (el.scrollHeight - el.clientHeight) / 2
         el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2
-      } else if (value === 'top center') { // 
+      } else if (value === 'top center') {
         el.scrollTop = 0
         el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2
       } else if (value === 'right center') { //

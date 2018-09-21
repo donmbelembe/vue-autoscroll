@@ -5,95 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>vue Autoscroll</title>
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css"> -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
   <!--[if lte IE 8]>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
   <![endif]-->
   <!--[if gt IE 8]><!-->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css"> -->
   <!--<![endif]-->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- <link rel="stylesheet" href="assets/style.css"> -->
+  <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({
       google_ad_client: "ca-pub-8812398883694145",
       enable_page_level_ads: true
     });
-  </script>
+  </script> -->
 </head>
 <body>
   <div id="app">
 
-    <div class="pure-g">
-        <div class="pure-u-1 pure-u-md-1-4 controls text-center">
-          <h1>Controls</h1>
-          <h3>Simple controls</h3>
-          <div class="simple-controls">
-            <div>
-              <button class="pure-button" @click="autoscrollTest('top')"><i class="fa fa-arrow-up"></i></button>
-            </div>
-            <div>
-              <button class="pure-button" @click="autoscrollTest('left')"><i class="fa fa-arrow-left"></i></button>
-              <button class="pure-button" @click="autoscrollTest('center')"><i class="fa fa-circle"></i></button>
-              <button class="pure-button" @click="autoscrollTest('right')"><i class="fa fa-arrow-right"></i></button>
-            </div>
-            <div>
-              <button class="pure-button" @click="autoscrollTest('bottom')"><i class="fa fa-arrow-down"></i></button>
-            </div>
-          </div>
-
-          <h3>Combined controls</h3>
-          <div class="mb">
-              <div>
-                <button class="pure-button" @click="autoscrollTest('top left')"><i class="fa fa-circle"></i></button>
-                <button class="pure-button" @click="autoscrollTest('top center')"><i class="fa fa-circle"></i></button>
-                <button class="pure-button" @click="autoscrollTest('top right')"><i class="fa fa-circle"></i></button>
-              </div>
-              <div>
-                <button class="pure-button" @click="autoscrollTest('left center')"><i class="fa fa-circle"></i></button>
-                <button class="pure-button" @click="autoscrollTest('center')"><i class="fa fa-circle"></i></button>
-                <button class="pure-button" @click="autoscrollTest('right center')"><i class="fa fa-circle"></i></button>
-              </div>
-              <div>
-                <button class="pure-button" @click="autoscrollTest('bottom left')"><i class="fa fa-circle"></i></button>
-                <button class="pure-button" @click="autoscrollTest('bottom center')"><i class="fa fa-circle"></i></button>
-                <button class="pure-button" @click="autoscrollTest('bottom right')"><i class="fa fa-circle"></i></button>
-              </div>
-          </div>
-
-          <div class="divide"></div>
-
-          <div>
-            <a href="https://github.com/donmbelembe/vue-autoscroll"><h4><i class="fa fa-github"></i> Github</h4></a>
-            <a href="https://www.npmjs.com/package/vue-autoscroll"><h4><strong>npm install --save vue-autoscroll</strong></h4></a>
-            <a href="https://unpkg.com/vue-autoscroll"><h4><strong>cdn: https://unpkg.com/vue-autoscroll</strong></h4></a>
-          </div>
-
-        </div>
-        <div class="pure-u-1 pure-u-md-3-4 ground">
-          <div class="container">
-            <div class="text-center">
-                <h1>vue-autoscroll</h1>
-            </div>
-
-            <div class="parent" v-autoscroll:noscroll="autoscroll">
-              <div ref="child" class="child">
-                <div class="grand-child"></div>
-              </div>
-            </div>
-
-            <div class="text-center">
-                <h1>v-autoscroll:noscroll="'{{autoscroll}}'"</h1>
-            </div>
-
-            <div class="text-white text-center">
-              <h3>Tips :</h3>
-              <strong>:noscroll</strong> argument will set <strong>overflow: hidden</strong> to the element, you can you it to hide scrollbars
-            </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <h1>vue-autoscroll</h1>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10 col-sm-6 col-md-4" style="height: 300px;">
+          <div class="w-100 h-100 border border-secondary" v-autoscroll:noscroll="autoscroll">
+            <img src="./36520.jpg" width="500">
           </div>
         </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <div class="text-center">
+                <h6><code>v-autoscroll:noscroll="'{{autoscroll}}'"</code></h6>
+            </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="row justify-content-center">
+              <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                <div class="text-center mb-1">
+                  <button class="btn btn-sm" @click="autoscrollTest('top')"><i class="fa fa-arrow-up"></i></button>
+                </div>
+                <div class="text-center mb-1">
+                  <button class="btn btn-sm" @click="autoscrollTest('left')"><i class="fa fa-arrow-left"></i></button>
+                  <button class="btn btn-sm" @click="autoscrollTest('center')"><i class="fa fa-circle"></i></button>
+                  <button class="btn btn-sm" @click="autoscrollTest('right')"><i class="fa fa-arrow-right"></i></button>
+                </div>
+                <div class="text-center mb-1">
+                  <button class="btn btn-sm" @click="autoscrollTest('bottom')"><i class="fa fa-arrow-down"></i></button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row justify-content-center">
+              <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                <div class="text-center mb-1">
+                  <button class="btn btn-sm" @click="autoscrollTest('top left')"><i class="fa fa-circle"></i></button>
+                  <button class="btn btn-sm" @click="autoscrollTest('top center')"><i class="fa fa-circle"></i></button>
+                  <button class="btn btn-sm" @click="autoscrollTest('top right')"><i class="fa fa-circle"></i></button>
+                </div>
+                <div class="text-center mb-1">
+                  <button class="btn btn-sm" @click="autoscrollTest('left center')"><i class="fa fa-circle"></i></button>
+                  <button class="btn btn-sm" @click="autoscrollTest('center')"><i class="fa fa-circle"></i></button>
+                  <button class="btn btn-sm" @click="autoscrollTest('right center')"><i class="fa fa-circle"></i></button>
+                </div>
+                <div class="text-center mb-1">
+                  <button class="btn btn-sm" @click="autoscrollTest('bottom left')"><i class="fa fa-circle"></i></button>
+                  <button class="btn btn-sm" @click="autoscrollTest('bottom center')"><i class="fa fa-circle"></i></button>
+                  <button class="btn btn-sm" @click="autoscrollTest('bottom right')"><i class="fa fa-circle"></i></button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <p class="text-justify">
+              <h5>Tips :</h5> <strong>:noscroll</strong> argument will set <code>overflow: hidden;</code> to the element, you can use it to hide scrollbars
+            </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <a href="https://github.com/donmbelembe/vue-autoscroll" target="_blank" class="text-warning">
+              <i class="fa fa-github"></i> View on Github
+            </a> 
+            <br> 
+            <a href="https://unpkg.com/vue-autoscroll" target="_blank" class="text-danger">
+              <i class="fa fa-bookmark"></i> CDN : https://unpkg.com/vue-autoscroll
+            </a> 
+            <br> 
+            <a href="https://www.npmjs.com/package/vue-autoscrol" target="_blank" class="text-info">
+              <i class="fa fa-bookmark"></i> NPM : <code>npm install --save vue-autoscroll</code>
+            </a>
+        </div>
+      </div>
     </div>
     
   </div>
