@@ -110,7 +110,7 @@ npm run build
 ```
 
 ## Contributors
-+ [Don](https://github.com/donmbelembe)
++ [Don](https://twitter.com/don_jon243)
 
 
 ## License
