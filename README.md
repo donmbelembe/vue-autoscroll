@@ -72,8 +72,11 @@ v-autoscroll:arg="value"
 
 1. `v-autoscroll` is the directive.
 2. You may pass `noscroll` as an `argument` (this will set *overflow: hidden* to the element and will hide scroll bars)
-> #### Usage : v-autoscroll:noscroll="top left"
-3. Accepted values are : '`top`', '`right`', '`bottom`', '`left`', '`center`', '`top left`', '`top right`', '`bottom left`', '`bottom right`', '`top center`', '`left center`', '`right center`', '`bottom center`'
+> #### Usage : `v-autoscroll:noscroll="top left"`
+### Values
+1. Directional positions : '`top`', '`right`', '`bottom`', '`left`', '`center`'
+3. Fixed positions : '`top left`', '`top right`', '`bottom left`', '`bottom right`', '`top center`', '`left center`', '`right center`', '`bottom center`'
+4. Specific position: `{ x: x-value, y: y-value, type: type}`. The `type` is either `absolute` (for [scrollTo](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo)) or `relative` (for [scrollBy](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollBy)). (This feature available from v1.2)
 
 > You can see all the behaviours on the [playground](https://donmbelembe.github.io/vue-autoscroll/)
 
@@ -121,4 +124,3 @@ npm run build
 
 + Animate scrolling
 + Scroll to a targeted child element
-+ Add functionality for ScrollBy().

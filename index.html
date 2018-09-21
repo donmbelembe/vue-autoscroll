@@ -5,26 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>vue Autoscroll</title>
-  <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css"> -->
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <!--[if lte IE 8]>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
-  <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css"> -->
-  <!--<![endif]-->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="assets/style.css"> -->
-  <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-8812398883694145",
-      enable_page_level_ads: true
-    });
-  </script> -->
+
+  <style>
+    .fa-rotate-45 {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  </style>
 </head>
 <body>
   <div id="app">
@@ -43,15 +36,16 @@
       <div class="row justify-content-center">
         <div class="col-12 text-center">
             <div class="text-center">
-                <h6><code>v-autoscroll:noscroll="'{{autoscroll}}'"</code></h6>
+                <h6 v-if="isObject"><code>v-autoscroll:noscroll="{{autoscroll}}"</code></h6>
+                <h6 v-else><code>v-autoscroll:noscroll="'{{autoscroll}}'"</code></h6>
             </div>
         </div>
       </div>
 
       <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-6 col-sm-4">
             <div class="row justify-content-center">
-              <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+              <div class="col-12 col-sm-12 col-md-8">
                 <div class="text-center mb-1">
                   <button class="btn btn-sm" @click="autoscrollTest('top')"><i class="fa fa-arrow-up"></i></button>
                 </div>
@@ -66,26 +60,45 @@
               </div>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-6 col-sm-4">
             <div class="row justify-content-center">
-              <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+              <div class="col-12 col-sm-12 col-md-8">
                 <div class="text-center mb-1">
-                  <button class="btn btn-sm" @click="autoscrollTest('top left')"><i class="fa fa-circle"></i></button>
-                  <button class="btn btn-sm" @click="autoscrollTest('top center')"><i class="fa fa-circle"></i></button>
-                  <button class="btn btn-sm" @click="autoscrollTest('top right')"><i class="fa fa-circle"></i></button>
+                  <button class="btn" @click="autoscrollTest('top left')"><i class="fa fa-angle-double-left fa-rotate-45"></i></button>
+                  <button class="btn" @click="autoscrollTest('top center')"><i class="fa fa-angle-double-up"></i></button>
+                  <button class="btn" @click="autoscrollTest('top right')"><i class="fa fa-angle-double-up fa-rotate-45"></i></button>
                 </div>
                 <div class="text-center mb-1">
-                  <button class="btn btn-sm" @click="autoscrollTest('left center')"><i class="fa fa-circle"></i></button>
-                  <button class="btn btn-sm" @click="autoscrollTest('center')"><i class="fa fa-circle"></i></button>
-                  <button class="btn btn-sm" @click="autoscrollTest('right center')"><i class="fa fa-circle"></i></button>
+                  <button class="btn" @click="autoscrollTest('left center')"><i class="fa fa-angle-double-left"></i></button>
+                  <button class="btn" @click="autoscrollTest('center')"><i class="fa fa-circle"></i></button>
+                  <button class="btn" @click="autoscrollTest('right center')"><i class="fa fa-angle-double-right"></i></button>
                 </div>
                 <div class="text-center mb-1">
-                  <button class="btn btn-sm" @click="autoscrollTest('bottom left')"><i class="fa fa-circle"></i></button>
-                  <button class="btn btn-sm" @click="autoscrollTest('bottom center')"><i class="fa fa-circle"></i></button>
-                  <button class="btn btn-sm" @click="autoscrollTest('bottom right')"><i class="fa fa-circle"></i></button>
+                  <button class="btn" @click="autoscrollTest('bottom left')"><i class="fa fa-angle-double-down fa-rotate-45"></i></button>
+                  <button class="btn" @click="autoscrollTest('bottom center')"><i class="fa fa-angle-double-down"></i></button>
+                  <button class="btn" @click="autoscrollTest('bottom right')"><i class="fa fa-angle-double-right fa-rotate-45"></i></button>
                 </div>
               </div>
             </div>
+        </div>
+        <div class="col-12 col-sm-4 mt-3">
+          <div class="row justify-content-center">
+            <div class="col-12 col-sm-12 col-md-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <select v-model="type" class="custom-select" id="inputGroupSelect01">
+                    <option selected value="absolute">absolute</option>
+                    <option value="relative">relative</option>
+                  </select>
+                </div>
+                <input v-model="x" type="text" aria-label="First name" class="form-control" placeholder="x">
+                <input v-model="y" type="text" aria-label="Last name" class="form-control" placeholder="y">
+                <div class="input-group-append">
+                  <button @click="scroll()" class="btn btn-secondary" type="button" id="button-addon2">Scroll</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -98,7 +111,7 @@
       <div class="row">
         <div class="col">
             <a href="https://github.com/donmbelembe/vue-autoscroll" target="_blank" class="text-warning">
-              <i class="fa fa-github"></i> View on Github
+              <i class="fa fa-github"></i> View on Github (Documentation)
             </a> 
             <br> 
             <a href="https://unpkg.com/vue-autoscroll" target="_blank" class="text-danger">
@@ -114,19 +127,27 @@
     
   </div>
   <script src="https://unpkg.com/vue"></script>
-  <!-- Switch between cdn and build-->
   <script src="./dist/vue-autoscroll.js"></script>
-  <!-- <script src="https://unpkg.com/vue-autoscroll"></script> -->
   <script>
     new Vue({
       el: '#app',
       data: {
-        autoscroll: 'center',
-        message: 'Hello Vue.js!',
+        x: 0,
+        y: 0,
+        type: 'relative',
+        autoscroll: 'center'
+      },
+      computed: {
+        isObject: function() {
+          return typeof this.autoscroll === 'object'
+        }
       },
       methods: {
         autoscrollTest (value) {
           this.autoscroll = value
+        },
+        scroll() {
+          this.autoscroll = { x: parseInt(this.x), y: parseInt(this.y), type: this.type}
         }
       }
     })
