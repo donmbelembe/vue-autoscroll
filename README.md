@@ -1,6 +1,6 @@
-# vue-autoscroll [Playground](https://donmbelembe.github.io/vue-autoscroll/)
+# vue-autoscroll 
 
-> A vue directive to scroll anywhere on a container (horizontally or vertically)
+> A vue directive to scroll anywhere on a container (horizontally or vertically), [See the playground](https://donmbelembe.github.io/vue-autoscroll/)
 
 ## Example
 
