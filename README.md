@@ -121,4 +121,4 @@ npm run build
 
 + Animate scrolling
 + Scroll to a targeted child element
-+ Add functionality for ScrollBy(). (Experimental javascript function)
++ Add functionality for ScrollBy().
